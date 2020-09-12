@@ -1,0 +1,82 @@
+[package]
+name = "hedgecut"
+version = "0.1.0"
+authors = ["Anon <anon@anon.com>"]
+edition = "2018"
+
+[[bin]]
+name = "evaluate_on_adult"
+path = "src/bin/evaluate_on_adult.rs"
+
+[[bin]]
+name = "evaluate_on_shopping"
+path = "src/bin/evaluate_on_shopping.rs"
+
+[[bin]]
+name = "evaluate_on_cardio"
+path = "src/bin/evaluate_on_cardio.rs"
+
+[[bin]]
+name = "evaluate_on_propublica"
+path = "src/bin/evaluate_on_propublica.rs"
+
+[[bin]]
+name = "evaluate_on_givemesomecredit"
+path = "src/bin/evaluate_on_givemesomecredit.rs"
+
+[[bin]]
+name = "evaluate_forget"
+path = "src/bin/evaluate_forget.rs"
+
+[[bin]]
+name = "evaluate_max_tries"
+path = "src/bin/evaluate_max_tries.rs"
+
+[[bin]]
+name = "evaluate_train_time"
+path = "src/bin/evaluate_train_time.rs"
+
+[[bin]]
+name = "evaluate_stress_test"
+path = "src/bin/evaluate_stress_test.rs"
+
+[[bin]]
+name = "evaluate_accuracy_forget"
+path = "src/bin/evaluate_accuracy_forget.rs"
+
+[[bin]]
+name = "evaluate_robustness"
+path = "src/bin/evaluate_robustness.rs"
+
+
+[[bin]]
+name = "evaluate_robustness_accuracy"
+path = "src/bin/evaluate_robustness_accuracy.rs"
+
+[[bin]]
+name = "play"
+path = "src/bin/play.rs"
+
+[[bench]]
+name = "scan_numerical"
+harness = false
+
+[[bench]]
+name = "scan_categorical"
+harness = false
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+csv = "1.1"
+rand = "0.6.5"
+rayon = "1.1"
+hashbrown = "0.8"
+bencher = "0.1.5"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+opt-level = 3
